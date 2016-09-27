@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div class="row" ng-repeat="artefato in artefatos">
+      <div class="col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">{{ artefato.titulo }}</div>
+          <div class="panel-body">
+            <table class="table">
+              <tr>
+                <td><b>Critério</b></td>
+                <td><b>Avaliação</b></td>
+              </tr>
+              <tr ng-repeat="atividade in artefato.atividades">
+                <td>{{ atividade.titulo }}</td>
+                <td>
+                  <input type="range" name="points" min="{{ atividade.min }}" max="{{ atividade.max }}" step="0.1" ng-model="atividade.value" ng-change="calcularNota()">
+                  <p><b>Valor:</b> {{ atividade.value }} <span ng-if="atividade.id == 'usoLabels' || atividade.id == 'erroPortugues'"> (Decrementar) </span></p>
+                </td>
+              </tr>
+            </table>
+            <p><b>Atraso em dias:</b> <input type="number" ng-model="artefato.atraso.value" min="0" max="10" ng-blur="calcularNota()" ng-change="calcularNota()"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">Resultado</div>
+      <div class="panel-body">
+        <table class="table">
+          <tr>
+            <td><b>Artefato/Entrega</b></td>
+            <td><b>Nota</b></td>
+          </tr>
+          <tr ng-repeat="artefato in artefatos">
+            <td>{{ artefato.titulo }}</td>
+            <td>{{ artefato.nota }}</td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+</div>
+</div>

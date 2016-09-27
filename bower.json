@@ -1,0 +1,21 @@
+{
+  "name": "if977-corretor",
+  "description": "Uma software que auxilia a correção de notas da monitoria da disciplina IF977 - Engenheria de Software - SI",
+  "main": "index.js",
+  "authors": [
+    "Jorge Linhares"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0"
+  }
+}

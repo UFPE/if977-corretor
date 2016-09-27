@@ -1,0 +1,56 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><b>Observações</b></div>
+  <div class="panel-body">
+      <table class="table">
+        <tr>
+          <th>ID</th>
+          <th>Observação</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>Decrementar o valor estipulado</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>
+            <p>0 = Não realizou o critério</p>
+            <p>2 = Atendeu Pouco</p>
+            <p>6 = Atendeu Parcialmente</p>
+            <p>10 = Atendeu Totalmente</p>
+          </td>
+        </tr>
+      </table>
+  </div>
+</div>
+
+<div class="panel panel-default" ng-repeat="artefato in artefatos">
+  <div class="panel-heading"><b>{{ artefato.titulo }}</b></div>
+  <div class="panel-body">
+    <table class="table">
+      <tr>
+        <th>Critério</th>
+        <th>Peso</th>
+        <th>Observação</th>
+      </tr>
+      <tr ng-repeat="atividade in artefato.atividades">
+        <td>{{ atividade.titulo }}</td>
+        <td>{{ atividade.peso }}</td>
+        <td ng-if="atividade.id == 'usoLabels' || atividade.id == 'erroPortugues'">0</td>
+        <td ng-if="atividade.id != 'usoLabels' && atividade.id != 'erroPortugues'">1</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- <p><b>Uso de Labels e Erro de Português:</b></p>
+<p>Decrementar o valor estipulado</p>
+<p><b>Demais Critérios:</b></p>
+<p>0 = Não realizou o critério</p>
+<p>2 = Atendeu Pouco</p>
+<p>6 = Atendeu Parcialmente</p>
+<p>10 = Atendeu Totalmente</p>
+<p><b>Peso por Critério:</b></p> -->
+<!-- <ul ng-repeat="artefato in artefatos">
+  <li><b>{{ artefato.titulo }}</b></li>
+  <li ng-repeat="atividade in artefato.atividades">{{ atividade.titulo }} : {{ atividade.peso }}</li>
+</ul> -->
