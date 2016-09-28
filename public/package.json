@@ -1,0 +1,23 @@
+{
+  "name": "if977-corretor",
+  "version": "1.0.0",
+  "description": "Uma software que auxilia a correção de notas da monitoria da disciplina IF977 - Engenheria de Software - SI",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jorgehclinhares@gitlab.com/jorgehclinhares/if977corretor.git"
+  },
+  "author": "Jorge Linhares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/jorgehclinhares/if977corretor/issues"
+  },
+  "homepage": "https://gitlab.com/jorgehclinhares/if977corretor#README",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}
